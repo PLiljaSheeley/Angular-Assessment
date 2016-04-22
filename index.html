@@ -1,0 +1,27 @@
+<html ng-app='myApp'>
+	<head>
+		<meta charset="UTF-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<script src="scripts.js"></script>
+		<title>Angular Assessment</title>
+	</head>
+	<body ng-controller="MainController as vm">
+
+		<input type="text" ng-model="vm.userInput" />
+    	<button ng-click="vm.showUserInput()">Submit</button>
+
+    	<div ng-show="vm.buttonClicked">
+      		The message is: {{vm.currentMessage}}
+    	</div>
+
+    	<div ng-show="vm.previousMessage">
+      		 <ul>
+      		 The previous messages are:
+      		 	<li ng-repeat="oldMessages in vm.messages.slice(0,vm.count-1) track by $index">
+      		 		{{oldMessages}}
+      		 	</li>
+      		 </ul>
+    	</div>
+
+  </body>
+</html>
